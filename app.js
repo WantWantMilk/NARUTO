@@ -1,6 +1,6 @@
-// Supabase 配置 - 请替换为你的项目信息
-const SUPABASE_URL = 'https://your-project-id.supabase.co'; // 替换为你的 Supabase URL
-const SUPABASE_ANON_KEY = 'your-anon-key'; // 替换为你的 Supabase 匿名密钥
+// ========== 请替换为你自己的 Supabase 项目信息 ==========
+const SUPABASE_URL = 'https://your-project-id.supabase.co';   // 你的 Supabase URL
+const SUPABASE_ANON_KEY = 'your-anon-key';                     // 你的 Supabase 匿名密钥
 
 // 初始化 Supabase 客户端
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -205,7 +205,6 @@ async function handleUpload() {
 
   // 检查上传配额
   if (!currentUser && method === 'file') {
-    // 匿名文件上传，检查IP限额
     try {
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const ipData = await ipResponse.json();
@@ -250,7 +249,6 @@ async function handleUpload() {
     if (method === 'url') {
       downloadURL = document.getElementById('imageUrl').value.trim();
       if (!downloadURL) throw new Error('请输入图片URL');
-      // 简单校验
       new URL(downloadURL);
     } else {
       const file = document.getElementById('fileInput').files[0];
@@ -322,7 +320,6 @@ async function handleUpload() {
     }
 
     msg.textContent = '上传成功！';
-    // 清空表单
     if (method === 'file') document.getElementById('fileInput').value = '';
     else document.getElementById('imageUrl').value = '';
     document.getElementById('uploadProgress').style.display = 'none';
@@ -386,7 +383,6 @@ async function loadUserWallpapers(privacy) {
       </div>
     `).join('');
 
-    // 绑定事件
     document.querySelectorAll('.delete-btn').forEach(btn => {
       btn.addEventListener('click', async (e) => {
         const id = e.target.dataset.id;
@@ -409,7 +405,6 @@ async function loadUserWallpapers(privacy) {
         const id = e.target.dataset.id;
         const newPrivacy = e.target.dataset.newprivacy;
         try {
-          // 检查切换后的配额
           const { data: countData, error: countError } = await supabase
             .from('wallpapers')
             .select('id')
@@ -443,7 +438,6 @@ loginBtn.addEventListener('click', async () => {
   const password = prompt('请输入密码（至少6位）：');
   if (!password) return;
   try {
-    // 尝试登录，失败则注册
     const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
     if (signInError) {
       if (signInError.message.includes('Invalid login credentials')) {
