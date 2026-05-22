@@ -6,11 +6,8 @@
   <title>NARUTO 壁纸站 | 火影忍者同人赏</title>
   <meta name="description" content="NARUTO 壁纸分享站，由粉丝维护。壁纸版权归岸本齐史/集英社所有。">
   <link rel="stylesheet" href="style.css">
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+  <!-- 引入 Supabase SDK，务必在 app.js 之前加载 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <header>
@@ -30,7 +27,7 @@
   </header>
 
   <main id="app">
-    <!-- 动态视图 -->
+    <!-- 动态视图由 JS 渲染 -->
   </main>
 
   <footer>
@@ -43,7 +40,7 @@
     <div class="modal-content">
       <span class="close-modal" id="closePrivacy">&times;</span>
       <h2>隐私政策与法律声明</h2>
-      <p>本站仅作为粉丝交流平台，所有壁纸版权归原作方所有（岸本齐史/集英社）。用户上传内容需确保不侵犯第三方权益。本站不存储用户隐私数据，账号采用 Firebase 认证。上传记录仅用于功能实现，不会公开分享。详情请阅读完整隐私政策（略）。</p>
+      <p>本站仅作为粉丝交流平台，所有壁纸版权归原作方所有（岸本齐史/集英社）。用户上传内容需确保不侵犯第三方权益。本站不存储用户隐私数据，账号采用 Supabase 认证。上传记录仅用于功能实现，不会公开分享。详情请阅读完整隐私政策（略）。</p>
     </div>
   </div>
 
