@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NARUTO 壁纸站 | 火影忍者同人赏</title>
+  <meta name="description" content="NARUTO 壁纸分享站，由粉丝维护。壁纸版权归岸本齐史/集英社所有。">
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="主导航">
+      <a href="#" class="logo" data-page="browse">🍥 NARUTO 壁纸</a>
+      <button class="nav-toggle" id="navToggle" aria-label="切换菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" data-page="browse" class="active">浏览</a></li>
+        <li><a href="#" data-page="upload">上传</a></li>
+        <li><a href="#" data-page="account">我的账户</a></li>
+        <li><button id="loginBtn" class="btn-outline">登录</button></li>
+        <li><button id="logoutBtn" class="btn-outline" style="display:none;">登出</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- 动态视图 -->
+  </main>
+
+  <footer>
+    <p>© 2026 LitLeX 网站设计 & 代码。壁纸版权 © 1999 岸本齐史 スコット/集英社。</p>
+    <p><a href="#" id="privacyLink">隐私与法律协议</a></p>
+  </footer>
+
+  <!-- 隐私协议弹窗 -->
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <span class="close-modal" id="closePrivacy">&times;</span>
+      <h2>隐私政策与法律声明</h2>
+      <p>本站仅作为粉丝交流平台，所有壁纸版权归原作方所有（岸本齐史/集英社）。用户上传内容需确保不侵犯第三方权益。本站不存储用户隐私数据，账号采用 Firebase 认证。上传记录仅用于功能实现，不会公开分享。详情请阅读完整隐私政策（略）。</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
