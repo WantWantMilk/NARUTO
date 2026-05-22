@@ -1,3 +1,3 @@
 # NARUTO
 火影忍者壁纸——浏览、上传、下载！
-WantWantMilk.github.io/NARUTO
+https://WantWantMilk.github.io/NARUTO
