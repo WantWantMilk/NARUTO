@@ -1,6 +1,7 @@
-// ========== 请替换为你自己的 Supabase 项目信息 ==========
-const SUPABASE_URL = 'https://your-project-id.supabase.co';   // 你的 Supabase URL
-const SUPABASE_ANON_KEY = 'your-anon-key';                     // 你的 Supabase 匿名密钥
+// app.js - 主逻辑
+// 从 config.js 中读取密钥（部署时动态生成）
+const SUPABASE_URL = window.SUPABASE_CONFIG.url;
+const SUPABASE_ANON_KEY = window.SUPABASE_CONFIG.anonKey;
 
 // 初始化 Supabase 客户端
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
